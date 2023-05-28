@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
@@ -52,8 +53,9 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:8'],
         ]);
+        // var_dump($data);
     }
 
     /**
@@ -64,10 +66,31 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+        $user->assignRole('user');
+
+        return $user;
+        // var_dump($user);die;
     }
+    // public function register(Request $request)
+    // {
+    //     $this->validator($request->all())->validate();
+
+    //     event(new Registered($user = $this->create($request->all())));
+    //     $user->assignRole('user');
+
+    //     $this->guard()->login($user);
+
+    //     if ($response = $this->registered($request, $user)) {
+    //         return $response;
+    //     }
+
+    //     return $request->wantsJson()
+    //         ? new JsonResponse([], 201)
+    //         : redirect($this->redirectPath());
+    // }
 }

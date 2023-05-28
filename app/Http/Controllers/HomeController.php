@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\Wisata;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $auth = auth()->user();
+        if ($auth->hasRole('admin')) {
+        $data = Wisata::all();
+            return view('admin.wisata.index',compact('data'));
+        } elseif ($auth->hasRole('user')) {
+        $data = Wisata::all();
+            return view('welcome',compact('data'));
+        }
     }
 }
