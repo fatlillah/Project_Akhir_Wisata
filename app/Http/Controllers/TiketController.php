@@ -62,7 +62,7 @@ class TiketController extends Controller
             'jumlah_tiket'     => $request->jumlah_tiket,
             'harga_total'     => $harga * $request->jumlah_tiket,
         ]);
-
+        
         return redirect()->route('tiket.index')->with('toast_success', 'Data berhasil ditambahkan!');
     }
 
