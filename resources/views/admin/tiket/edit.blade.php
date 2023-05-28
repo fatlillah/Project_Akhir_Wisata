@@ -1,63 +1,80 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container-fluid">
-    <div class="card card-primary">
-        <div class="card-header">
-            <h3 class="card-title">Form Edit Data</h3>
+    <div class="container-fluid">
+        <div class="card card-primary">
+            <div class="card-header">
+                <h3 class="card-title">Form Edit Data</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <form action="{{ route('tiket.update', $data->id) }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    @method('PATCH')
+                    <div class="mb-3">
+                        <label for="nama_pemesan" class="form-label">Nama Pemesan</label>
+                        <input type="text" class="form-control @error('nama_pemesan') is-invalid @enderror"
+                            name="nama_pemesan" id="nama_pemesan" value="{{ $data->nama_pemesan }}">
+                        @error('nama_pemesan')
+                            <div class="alert alert-danger mt=2">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label for="nama_wisata" class="form-label">Nama Wisata</label>
+                        <select name="nama_wisata" id="nama_wisata">
+                            <option value="{{ $data->nama_wisata }}">{{ $data->nama_wisata }}</option>
+                            @foreach ($data1 as $p)
+                                <option value="{{ $p->nama }}">{{ $p->nama }}</option>
+                            @endforeach
+                        </select>
+                        @error('nama_wisata')
+                            <div class="alert alert-danger mt=2">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label for="tanggal" class="form-label">Tanggal</label>
+                        <input type="date" class="form-control @error('tanggal') is-invalid @enderror" name="tanggal"
+                            id="tanggal" value="{{ $data->tanggal }}">
+                        @error('tanggal')
+                            <div class="alert alert-danger mt=2">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label for="harga_tiket" class="form-label">Harga Tiket</label>
+                        <select name="harga_tiket" id="harga_tiket">
+                            <option value="{{ $data->harga_tiket }}">{{ $data->harga_tiket }}</option>
+                            @foreach ($data1 as $p)
+                                <option value="{{ $p->harga }}">{{ $p->harga }}</option>
+                            @endforeach
+                        </select>
+                        @error('harga_tiket')
+                            <div class="alert alert-danger mt=2">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label for="jumlah_tiket" class="form-label">Jumlah Tiket</label>
+                        <input type="number" class="form-control @error('jumlah_tiket') is-invalid @enderror"
+                            name="jumlah_tiket" id="jumlah_tiket" value="{{ $data->jumlah_tiket }}">
+                        @error('jumlah_tiket')
+                            <div class="alert alert-danger mt=2">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Reset</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            </form>
         </div>
-        <!-- /.card-header -->
-        <div class="card-body">
-            <form action="{{ route('wisata.update', $data->id) }}" method="POST" enctype="multipart/form-data">
-                @csrf
-                @method('PATCH')
-                <div class="mb-3">
-                    <label for="gambar" class="form-label">Gambar</label>
-                    <input type="file" class="form-control @error('gambar') is-invalid @enderror" name="gambar" id="gambar">
-                    @error('gambar')
-                    <div class="alert alert-danger mt=2">
-                        {{ $message }}
-                    </div>
-                    @enderror
-                </div>
-
-                <div class="mb-3">
-                    <label for="nama" class="form-label">Nama</label>
-                    <input type="text" value="{{ $data->nama }}" class="form-control @error('nama') is-invalid @enderror" name="nama" id="nama">
-                    @error('nama')
-                    <div class="alert alert-danger mt=2">
-                        {{ $message }}
-                    </div>
-                    @enderror
-                </div>
-
-                <div class="mb-3">
-                    <label for="deskripsi" class="form-label">Deskripsi</label>
-                    <textarea class="form-control @error('deskripsi') is-invalid @enderror" name="deskripsi" id="deskripsi" rows="3">{{$data->deskripsi }}</textarea>
-                    @error('deskripsi')
-                    <div class="alert alert-danger mt=2">
-                        {{ $message }}
-                    </div>
-                    @enderror
-                </div>
-
-                <div class="mb-3">
-                    <label for="harga" class="form-label">Harga</label>
-                    <input type="text" value="{{ $data->harga }}" class="form-control @error('harga') is-invalid @enderror" name="harga" id="harga">
-                    @error('harga')
-                    <div class="alert alert-danger mt=2">
-                        {{ $message }}
-                    </div>
-                    @enderror
-                </div>
-        </div>
-
-        <div class="modal-footer">
-            <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Reset</button>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-        </form>
     </div>
-</div>
-</div>
 @endsection

@@ -7,6 +7,7 @@ use App\Http\Controllers\PesanTiketWisataController;
 use App\Http\Controllers\TiketController;
 use App\Http\Controllers\WisataController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PemesananController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,4 +33,5 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('wisata', WisataController::class);
     Route::resource('tiket', TiketController::class);
     Route::resource('users', UserController::class);
+    Route::resource('pesan', PemesananController::class);
 });

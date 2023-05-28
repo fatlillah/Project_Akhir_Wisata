@@ -10,18 +10,20 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="{{asset('landing')}}/assets/img/favicon.png" rel="icon">
-    <link href="{{asset('landing')}}/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="{{ asset('landing') }}/assets/img/favicon.png" rel="icon">
+    <link href="{{ asset('landing') }}/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i"
+        rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="{{asset('landing')}}/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="{{asset('landing')}}/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="{{ asset('landing') }}/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('landing') }}/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link href="{{asset('landing')}}/assets/css/style.css" rel="stylesheet">
+    <link href="{{ asset('landing') }}/assets/css/style.css" rel="stylesheet">
 
     <!-- =======================================================
   * Template Name: Siimple
@@ -39,44 +41,29 @@
         <div class="container-fluid">
 
             <div class="logo">
-                <h1><a href="index.html">Siimple</a></h1>
                 <!-- Uncomment below if you prefer to use an image logo -->
-                <!-- <a href="index.html"><img src="{{asset('landing')}}/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+                <!-- <a href="index.html"><img src="{{ asset('landing') }}/assets/img/logo.png" alt="" class="img-fluid"></a>-->
             </div>
 
             <button type="button" class="nav-toggle"><i class="bx bx-menu"></i></button>
             <nav class="nav-menu">
                 <ul>
                     <li class="active"><a href="#header" class="scrollto">Home</a></li>
-                    <li><a href="#about" class="scrollto">About Us</a></li>
-                    <li><a href="#why-us" class="scrollto">Why Us</a></li>
-                    <li class="drop-down"><a href="">Drop Down</a>
-                        <ul>
-                            <li><a href="#">Drop Down 1</a></li>
-                            <li class="drop-down"><a href="#">Drop Down 2</a>
-                                <ul>
-                                    <li><a href="#">Deep Drop Down 1</a></li>
-                                    <li><a href="#">Deep Drop Down 2</a></li>
-                                    <li><a href="#">Deep Drop Down 3</a></li>
-                                    <li><a href="#">Deep Drop Down 4</a></li>
-                                    <li><a href="#">Deep Drop Down 5</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Drop Down 3</a></li>
-                            <li><a href="#">Drop Down 4</a></li>
-                            <li><a href="#">Drop Down 5</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="#Wisata" class="scrollto">Wisata</a></li>
+                    <li><a href="#pesan" class="scrollto">Pesan Tiket</a></li>
+                    <li><a href="#riwayat" class="scrollto">Riwayat Pemesanan</a></li>
                     <li><a href="#contact" class="scrollto">Contact Us</a></li>
-                    <li >
-                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();" class="nav-link">
-                        <p>Logout</p>
-                    </a>
-                    <form id="logout-form" action="{{  route('logout')}}" method="POST" class="d-none">
-                        @csrf
-                    </form>
-                </li>
+                    <li>
+                        <a href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();"
+                            class="nav-link">
+                            <p>Logout</p>
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </li>
                 </ul>
             </nav><!-- .nav-menu -->
 
@@ -86,72 +73,62 @@
     <!-- ======= Hero Section ======= -->
     <section id="hero">
         <div class="hero-container">
-            <h1>Welcome to Siimple</h1>
-            <h2>Please, fill out the for below to be notified for the latest updates!</h2>
-
-            <form action="forms/notify.php" method="post" role="form" class="php-email-form">
-                <div class="row no-gutters">
-                    <div class="col-md-6 form-group pr-md-1">
-                        <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="col-md-6 form-group pl-md-1">
-                        <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                    </div>
-                </div>
-
-                <div class="my-3">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Your notification request was sent. Thank you!</div>
-                </div>
-                <div class="text-center"><button type="submit">Notify me!</button></div>
-            </form>
+            <h1>Welcome !!!</h1>
+            <h2>Pemesanan Tiket Wisata Kabupaten Sumenep</h2>
         </div>
     </section><!-- #hero -->
 
     <main id="main">
 
-        <!-- ======= About Section ======= -->
+        {{-- <!-- ======= About Section ======= -->
         <section id="about" class="about">
             <div class="container">
 
                 <div class="row">
                     <div class="col-lg-6">
-                        <img src="{{asset('landing')}}/assets/img/about-img.jpg" class="img-fluid" alt="">
+                        <img src="{{ asset('landing') }}/assets/img/about-img.jpg" class="img-fluid" alt="">
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0">
                         <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
                         <p class="fst-italic">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore
                             magna aliqua.
                         </p>
                         <ul>
-                            <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                            <li><i class="bx bx-check-double"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                            <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+                            <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat.</li>
+                            <li><i class="bx bx-check-double"></i> Duis aute irure dolor in reprehenderit in voluptate
+                                velit.</li>
+                            <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda
+                                mastiro dolore eu fugiat nulla pariatur.</li>
                         </ul>
                         <p>
-                            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                            reprehenderit in voluptate
+                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                            proident, sunt in
                             culpa qui officia deserunt mollit anim id est laborum
                         </p>
                     </div>
                 </div>
 
             </div>
-        </section><!-- End About Section -->
+        </section><!-- End About Section --> --}}
 
         <!-- ======= Why Us Section ======= -->
-        <section id="why-us" class="why-us section-bg">
+        <section id="wisata" class="why-us section-bg">
             <div class="container">
 
                 <div class="row">
-                @foreach ($data as $item)
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                        <div class="card">
-                            <img src="{{ Storage::url('public/wisata/').$item->gambar }}" class="card-img-top" alt="...">
-                            <div class="card-icon">
-                                <i class="bx bx-book-reader">
+                    @foreach ($data as $item)
+                        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                            <div class="card">
+                                <img src="{{ Storage::url('public/wisata/') . $item->gambar }}" class="card-img-top"
+                                    alt="{{ $item->nama }}">
+                                <div class="card-icon">
+                                    <i class="bx bx-book-reader">
                                     </i>
                                 </div>
                                 <div class="card-body">
@@ -159,82 +136,158 @@
                                     <p class="card-text">{{ $item->deskripsi }}</p>
                                 </div>
                                 <a class="btn btn-warning" style="float:center" href="">pesan</a>
+                            </div>
                         </div>
-                    </div>
                     @endforeach
                 </div>
             </div>
         </section><!-- End Why Us Section -->
 
         <!-- ======= Frequenty Asked Questions Section ======= -->
-        <section class="faq">
+        <section class="pesan">
             <div class="container">
-
                 <div class="section-title">
-                    <h2>Frequenty Asked Questions</h2>
+                    <h2>Pesan Tiket</h2>
                 </div>
-
-                <ul class="faq-list">
-
-                    <li>
-                        <a data-bs-toggle="collapse" class="collapsed" data-bs-target="#faq1">Non consectetur a erat nam at lectus urna duis? <i class="bx bx-down-arrow-alt icon-show"></i><i class="bx bx-x icon-close"></i></a>
-                        <div id="faq1" class="collapse" data-bs-parent=".faq-list">
-                            <p>
-                                Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
-                            </p>
+                <div class="card-body">
+                    <form action="{{ route('pesan.store') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="col-6" style="display:none">
+                            <label for="nama_pemesan" class="form-label">Nama Pemesan</label>
+                            <input type="text" class="form-control @error('nama_pemesan') is-invalid @enderror"
+                                name="nama_pemesan" id="nama_pemesan" value="{{ Auth::user()->name }}">
+                            @error('nama_pemesan')
+                                <div class="alert alert-danger mt=2">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
-                    </li>
-
-                    <li>
-                        <a data-bs-toggle="collapse" data-bs-target="#faq2" class="collapsed">Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque? <i class="bx bx-down-arrow-alt icon-show"></i><i class="bx bx-x icon-close"></i></a>
-                        <div id="faq2" class="collapse" data-bs-parent=".faq-list">
-                            <p>
-                                Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
-                            </p>
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="nama_wisata" class="form-label">Nama Wisata</label>
+                                <select name="nama_wisata" id="nama_wisata" class="form-select">
+                                    @foreach ($data as $p)
+                                        <option value="{{ $p->nama }}">{{ $p->nama }}</option>
+                                    @endforeach
+                                </select>
+                                <!-- <input type="text" class="form-control @error('nama_wisata') is-invalid @enderror" name="nama_wisata" id="nama_wisata"> -->
+                                @error('nama_wisata')
+                                    <div class="alert alert-danger mt=2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class="col-6">
+                                <label for="tanggal" class="form-label">Tanggal</label>
+                                <input type="date" class="form-control @error('tanggal') is-invalid @enderror"
+                                    name="tanggal" id="tanggal">
+                                @error('tanggal')
+                                    <div class="alert alert-danger mt=2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
                         </div>
-                    </li>
-
-                    <li>
-                        <a data-bs-toggle="collapse" data-bs-target="#faq3" class="collapsed">Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi? <i class="bx bx-down-arrow-alt icon-show"></i><i class="bx bx-x icon-close"></i></a>
-                        <div id="faq3" class="collapse" data-bs-parent=".faq-list">
-                            <p>
-                                Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
-                            </p>
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="harga_tiket" class="form-label">Harga Tiket</label>
+                                <select name="harga_tiket" id="harga_tiket" class="form-select">
+                                    @foreach ($data as $p)
+                                        <option value="{{ $p->harga }}">{{ $p->harga }}</option>
+                                    @endforeach
+                                </select>
+                                <!-- <input type="text" class="form-control @error('harga_tiket') is-invalid @enderror" name="harga_tiket" id="harga_tiket"> -->
+                                @error('harga_tiket')
+                                    <div class="alert alert-danger mt=2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class="col-6">
+                                <label for="jumlah_tiket" class="form-label">Jumlah Tiket</label>
+                                <input type="number" class="form-control @error('jumlah_tiket') is-invalid @enderror"
+                                    name="jumlah_tiket" id="jumlah_tiket">
+                                @error('jumlah_tiket')
+                                    <div class="alert alert-danger mt=2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
                         </div>
-                    </li>
-
-                    <li>
-                        <a data-bs-toggle="collapse" data-bs-target="#faq4" class="collapsed">Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla? <i class="bx bx-down-arrow-alt icon-show"></i><i class="bx bx-x icon-close"></i></a>
-                        <div id="faq4" class="collapse" data-bs-parent=".faq-list">
-                            <p>
-                                Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
-                            </p>
-                        </div>
-                    </li>
-
-                    <li>
-                        <a data-bs-toggle="collapse" data-bs-target="#faq5" class="collapsed">Tempus quam pellentesque nec nam aliquam sem et tortor consequat? <i class="bx bx-down-arrow-alt icon-show"></i><i class="bx bx-x icon-close"></i></a>
-                        <div id="faq5" class="collapse" data-bs-parent=".faq-list">
-                            <p>
-                                Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in
-                            </p>
-                        </div>
-                    </li>
-
-                    <li>
-                        <a data-bs-toggle="collapse" data-bs-target="#faq6" class="collapsed">Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor? <i class="bx bx-down-arrow-alt icon-show"></i><i class="bx bx-x icon-close"></i></a>
-                        <div id="faq6" class="collapse" data-bs-parent=".faq-list">
-                            <p>
-                                Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Nibh tellus molestie nunc non blandit massa enim nec.
-                            </p>
-                        </div>
-                    </li>
-
-                </ul>
-
+                </div>
+                <hr>
+                <div class="modal-footer">
+                    <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Reset</button>&ensp;
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+                </form>
             </div>
         </section><!-- End Frequenty Asked Questions Section -->
 
+        <section class="riwayat">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Riwayat Pemesanan Tiket</h2>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">DATA Pemesanan</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body table-responsive">
+                                <table id="example1" class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>Nama Pemesan</th>
+                                            <th>Nama Wisata</th>
+                                            <th>Tanggal</th>
+                                            <th>Harga Tiket</th>
+                                            <th>Jumlah Tiket</th>
+                                            <th>Harga Total</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    @php
+                                        $no = 1;
+                                    @endphp
+                                    <tbody>
+                                        @foreach ($data1 as $item)
+                                            <tr>
+                                                <td>{{ $no++ }}</td>
+                                                <td>{{ $item->nama_pemesan }}</td>
+                                                <td>{{ $item->nama_wisata }}</td>
+                                                <td>{{ $item->tanggal }}</td>
+                                                <td>@currency($item->harga_tiket)</td>
+                                                <td>{{ $item->jumlah_tiket }}</td>
+                                                <td>@currency($item->harga_total)</td>
+
+                                                <td>
+                                                    <form action="{{ route('pesan.destroy', $item->id) }}"
+                                                        method="post" style="display:inline">
+                                                        <a href="{{ route('pesan.edit', $item->id) }}"
+                                                            class="btn btn-sm btn-warning">EDIT</a>
+                                                        <button type="submit" class="btn btn-sm btn-danger"
+                                                            onclick="return confirm('Yakin ingin menghapus data ? Data tidak dapat dipulihkan')">DELETE</button>
+                                                        @csrf
+                                                        @method('DELETE')
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                </div>
+
+            </div>
+        </section>
         <!-- ======= Contact Us Section ======= -->
         <section id="contact" class="contact section-bg">
             <div class="container">
@@ -275,13 +328,16 @@
                     <div class="col-lg-5 col-md-7">
                         <form action="forms/contact.php" method="post" role="form" class="php-email-form">
                             <div class="form-group">
-                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                                <input type="text" name="name" class="form-control" id="name"
+                                    placeholder="Your Name" required>
                             </div>
                             <div class="form-group mt-3">
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                                <input type="email" class="form-control" name="email" id="email"
+                                    placeholder="Your Email" required>
                             </div>
                             <div class="form-group mt-3">
-                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                                <input type="text" class="form-control" name="subject" id="subject"
+                                    placeholder="Subject" required>
                             </div>
                             <div class="form-group mt-3">
                                 <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
@@ -304,26 +360,17 @@
 
     <!-- ======= Footer ======= -->
     <footer id="footer">
-        <div class="container">
-            <div class="copyright">
-                &copy; Copyright <strong><span>Siimple</span></strong>. All Rights Reserved
-            </div>
-            <div class="credits">
-                <!-- All the links in the footer should remain intact. -->
-                <!-- You can delete the links only if you purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-bootstrap-landing-page/ -->
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-            </div>
+        <div class="copyright">
+            <strong><span>Dwi Fatlillah</span></strong>
         </div>
     </footer><!-- End #footer -->
 
     <!-- Vendor JS Files -->
-    <script src="{{asset('landing')}}/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="{{asset('landing')}}/assets/vendor/php-email-form/validate.js"></script>
+    <script src="{{ asset('landing') }}/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('landing') }}/assets/vendor/php-email-form/validate.js"></script>
 
     <!-- Template Main JS File -->
-    <script src="{{asset('landing')}}/assets/js/main.js"></script>
+    <script src="{{ asset('landing') }}/assets/js/main.js"></script>
 
 </body>
 

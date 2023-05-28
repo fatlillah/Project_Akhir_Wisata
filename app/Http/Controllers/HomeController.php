@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Tiket;
 use App\Models\Wisata;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -31,7 +33,9 @@ class HomeController extends Controller
             return view('admin.wisata.index',compact('data'));
         } elseif ($auth->hasRole('user')) {
         $data = Wisata::all();
-            return view('welcome',compact('data'));
+        $name = Auth::user()->name;
+        $data1 = Tiket::where('nama_pemesan','=',$name)->get();
+            return view('welcome',compact('data','data1'));
         }
     }
 }

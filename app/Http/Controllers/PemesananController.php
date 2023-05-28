@@ -7,7 +7,7 @@ use App\Models\Wisata;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class TiketController extends Controller
+class PemesananController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +16,10 @@ class TiketController extends Controller
      */
     public function index()
     {
-        $data = Tiket::all();
-        $title = 'Master data';
+        $data1 = Tiket::all();
+        $data = Wisata::all();
         // dd($data);
-        return view('admin.tiket.index', compact('data', 'title'));
+        return view('welcome', compact('data','data1'));
     }
 
     /**
@@ -30,8 +30,7 @@ class TiketController extends Controller
     public function create()
     {
         $data = Wisata::all();
-        $title =  'Tambah Data';
-        return view('admin.tiket.create', compact('title','data'));
+        return view('welcome', compact('title'));
     }
 
     /**
@@ -63,7 +62,7 @@ class TiketController extends Controller
             'harga_total'     => $harga * $request->jumlah_tiket,
         ]);
 
-        return redirect()->route('tiket.index')->with('toast_success', 'Data berhasil ditambahkan!');
+        return redirect('home')->with('toast_success', 'Data berhasil ditambahkan!');
     }
 
     /**
@@ -87,7 +86,7 @@ class TiketController extends Controller
     {
         $data = Tiket::find($id);
         $data1 = Wisata::all();
-        return view('admin.tiket.edit', compact('data','data1'));
+        return view('welcome', compact('data','data1'));
     }
 
     /**
@@ -120,7 +119,7 @@ class TiketController extends Controller
             'harga_total'     => $harga * $request->jumlah_tiket,
         ]);
 
-        return redirect()->route('tiket.index')->with('toast_success', 'Data berhasil diubah');
+        return redirect('home')->with('toast_success', 'Data berhasil diubah');
     }
 
     /**
@@ -132,6 +131,6 @@ class TiketController extends Controller
     public function destroy($id)
     {
         DB::table('tikets')->where('id', $id)->delete();
-        return redirect()->route('tiket.index')->with('toast_success', 'Data berhasil dihapus');
+        return redirect('home')->with('toast_success', 'Data berhasil dihapus');
     }
 }
